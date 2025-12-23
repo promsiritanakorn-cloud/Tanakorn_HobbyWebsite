@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>.lw { font-size: 60px; }</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Genres</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0d0d0f;
+      --panel: rgba(20,20,24,0.95);
+      --text: #e6e6e6;
+      --gold: #d4a017;
+      --gold-soft: #b98c14;
+      --border: #2a2a2e;
+      --shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0d0d0f, #1c1c22);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.9;
+    }
+
+    header {
+      height: 60vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
+        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&auto=format&fit=crop&w=1600') center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 4rem;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-shadow: 0 14px 28px rgba(0,0,0,0.75);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+
+    .genre-list {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    /* NEW LINK WRAPPER STYLING */
+    .genre-link {
+      text-decoration: none; /* Removes underline */
+      color: inherit; /* Keeps text from turning blue */
+      display: block; /* Makes the whole area clickable */
+    }
+
+    .genre-item {
+      display: flex;
+      flex-wrap: wrap;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .genre-link:hover .genre-item {
+      transform: translateY(-10px);
+      box-shadow: 0 35px 90px rgba(0,0,0,0.75);
+    }
+
+    .genre-item img {
+      flex: 1 1 300px;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+      filter: brightness(0.85);
+      transition: filter 0.3s ease;
+    }
+
+    .genre-link:hover img {
+      filter: brightness(1);
+    }
+
+    .genre-info {
+      flex: 2 1 400px;
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .genre-info h3 {
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      margin: 0 0 15px 0;
+      font-size: 2rem;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.5);
+    }
+
+    .genre-info p {
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      font-size: 1rem;
+    }
+
+    .nav-links a {
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 0.6px;
+      font-weight: 600;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.35s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 0 40px;
+      font-size: 0.95rem;
+      color: #a5a5a5;
+    }
+
+    footer span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Writing Genres</h1>
+  </header>
+
+  <div class="container">
+    <div class="genre-list">
+
+      <a href="https://share.google/5Nycy1v67iGlnfRQs" class="genre-link">
+        <div class="genre-item">
+          <img src="pics/fantacy.jpg" alt="Fantasy">
+          <div class="genre-info">
+            <h3>Fantasy</h3>
+            <p>Imaginative worlds, magic, and adventure that transport readers beyond reality.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.goodreads.com/genres/romance" class="genre-link">
+        <div class="genre-item">
+          <img src="pics/romance.jpg" alt="Romance">
+          <div class="genre-info">
+            <h3>Romance</h3>
+            <p>Stories exploring love, relationships, and emotional journeys of characters.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.goodreads.com/genres/detective" class="genre-link">
+        <div class="genre-item">
+          <img src="pics/detective.jpg" alt="Mystery">
+          <div class="genre-info">
+            <h3>Mystery &amp; Detective</h3>
+            <p>Intriguing plots filled with suspense, puzzles, and unexpected twists.</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://www.goodreads.com/genres/horror" class="genre-link">
+        <div class="genre-item">
+          <img src="pics/horror.jpg" alt="Horror">
+          <div class="genre-info">
+            <h3>Horror</h3>
+            <p>Often involves mysteries, plot twists, and supernatural things designed to thrill and chill.</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="nav-links">
+      <a href="hobby writing page1.html">← Back</a>
+    </div>
+  </div>
+
+  <footer>
+    Created with intention by <span>DuckEnthusiast</span>
+  </footer>
+</body>
+</html>

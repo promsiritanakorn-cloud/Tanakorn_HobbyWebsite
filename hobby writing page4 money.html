@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>.lw { font-size: 60px; }</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monetizing Your Writing - Cinematic Experience</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0d0d0f;
+      --text: #e6e6e6;
+      --gold: #d4a017;
+      --shadow: 0 35px 100px rgba(0,0,0,0.8);
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #1a1a1f, #0d0d0f);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+    }
+
+    header {
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&auto=format&fit=crop&w=1600') center/cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
+    }
+
+    header h1 {
+      position: relative;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem;
+      text-align: center;
+      text-shadow: 0 20px 40px rgba(0,0,0,0.9), 0 0 30px rgba(212,160,23,0.6);
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 20px 40px rgba(0,0,0,0.9), 0 0 30px rgba(212,160,23,0.4); }
+      to { text-shadow: 0 25px 50px rgba(0,0,0,0.95), 0 0 60px rgba(212,160,23,0.9); }
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      max-width: 1400px;
+      margin: -100px auto 80px auto;
+      padding: 0 20px;
+      perspective: 1500px;
+    }
+
+    /* LINK STYLING */
+    .method-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      border-radius: 25px;
+    }
+
+    .method-card {
+      background: linear-gradient(135deg, rgba(20,20,24,0.95), rgba(30,30,35,0.95));
+      border-radius: 25px;
+      width: 350px;
+      height: 500px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .method-link:hover .method-card {
+      transform: rotateY(15deg) rotateX(5deg) scale(1.08);
+      box-shadow: 0 50px 150px rgba(0,0,0,0.9);
+    }
+
+    .method-card img {
+      width: 100%;
+      height: 60%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .method-link:hover .method-card img {
+      transform: scale(1.1) rotate(-2deg);
+    }
+
+    .method-info {
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      top: -15px;
+      z-index: 2;
+    }
+
+    .method-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+    }
+
+    .method-info p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .nav-links {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 60px;
+      font-size: 1.1rem;
+      padding: 0 40px;
+      box-sizing: border-box;
+    }
+
+    .nav-links a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.35s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 0 40px;
+      font-size: 0.95rem;
+      color: #a5a5a5;
+    }
+
+    footer span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Monetizing Your Writing</h1>
+  </header>
+
+  <div class="container">
+
+    <a href="https://youtu.be/bU5b3FXfR8A?si=zGaDwKlWKebSREEX" class="method-link">
+      <div class="method-card">
+        <img src="pics/published.jpg" alt="Self-Publishing">
+        <div class="method-info">
+          <h3>Self-Publishing</h3>
+          <p>Publish your own works through platforms like Amazon, Kindle, AO3, ReadAWrite, etc.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://youtu.be/90Vvoffk9XM?si=L-1pIA2PXZwJuesA" class="method-link">
+      <div class="method-card">
+        <img src="pics/freelance.jpg" alt="Freelancing">
+        <div class="method-info">
+          <h3>Freelance Writer</h3>
+          <p>Offer your writing services for blogs, articles, and copywriting to earn income.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://youtu.be/1is8-VNDmo8?si=eA36a4_kep_l_9Gs" class="method-link">
+      <div class="method-card">
+        <img src="pics/writing contest.jpg">
+        <div class="method-info">
+          <h3>Writing Contests</h3>
+          <p>Enter competitions and contests which often offer cash prizes for winning entries.</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://youtu.be/N55TrBVZ57g?si=WqMDnFCs-J26u01G" class="method-link">
+      <div class="method-card">
+        <img src="pics/blogs.jpg" alt="Blogging">
+        <div class="method-info">
+          <h3>Blogging</h3>
+          <p>Start a blog and monetize through ads, affiliate links, or sponsorships.</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="nav-links">
+  <a href="index.html">← Home Page</a>
+
+  <a href="Tips.html">Start Writing Now→</a>
+</div>
+  <footer>
+    Created with intention by <span>DuckEnthusiast</span>
+  </footer>
+
+</body>
+</html>

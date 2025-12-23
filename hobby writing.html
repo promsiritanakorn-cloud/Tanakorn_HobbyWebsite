@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0d0d0f;
+      --panel: #141418;
+      --text: #e6e6e6;
+      --gold: #d4a017;
+      --gold-soft: #b98c14;
+      --border: #2a2a2e;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.55);
+      --glass: rgba(20, 20, 24, 0.8);
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.75;
+      background-image: radial-gradient(circle at 50% 50%, #1a1a20 0%, #0d0d0f 100%);
+    }
+
+    header {
+      height: 65vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+        url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&auto=format&fit=crop&w=1600')
+        center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 4rem;
+      background: linear-gradient(to bottom, var(--gold), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      text-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      letter-spacing: 2px;
+      position: relative;
+      padding: 20px 40px;
+    }
+
+    header p {
+      margin-top: 20px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      max-width: 650px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 70px auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 45px 50px;
+      margin-bottom: 55px;
+      box-shadow: var(--shadow);
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 45px rgba(0,0,0,0.7), 0 0 20px rgba(212, 160, 23, 0.05);
+      border-color: rgba(212, 160, 23, 0.3);
+    }
+
+    .section h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--gold);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+      border-left: 4px solid var(--gold);
+      padding-left: 18px;
+    }
+
+    /* Link styling for highlight boxes */
+    .box-link {
+      text-decoration: none;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .highlight-box {
+      padding: 18px 20px;
+      background: linear-gradient(135deg, rgba(212,160,23,0.15) 0%, rgba(212,160,23,0.05) 100%);
+      border: 1px solid var(--gold);
+      border-radius: 10px;
+      text-align: center;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .highlight-box:hover {
+      background: var(--gold);
+      color: var(--bg);
+      box-shadow: 0 0 25px rgba(212, 160, 23, 0.4);
+    }
+
+    /* Navigation Box Styling */
+    .back-box, .next-box {
+      position: fixed;
+      bottom: 30px;
+      background: var(--panel);
+      border: 1px solid var(--gold);
+      padding: 12px 25px;
+      border-radius: 50px; /* More modern rounded pill */
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      backdrop-filter: blur(5px);
+    }
+
+    .back-box { left: 30px; }
+    .next-box { right: 30px; }
+
+    .back-box:hover, .next-box:hover {
+      background: var(--gold);
+      color: var(--bg);
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    /* Layout for Genres + 2 Small Boxes */
+    .genres-container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-end;
+      margin-top: 20px;
+    }
+
+    .genres-box {
+      flex: 1;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&amp;auto=format&amp;fit=crop&amp;w=1400') center/cover no-repeat;
+      border: 1px solid var(--gold-soft);
+      box-shadow: 0 0 25px rgba(212,160,23,0.15);
+      border-radius: 14px;
+      padding: 40px;
+      transition: all 0.4s ease;
+    }
+
+    .genres-box:hover {
+        border-color: var(--gold);
+        box-shadow: 0 0 35px rgba(212,160,23,0.25);
+    }
+
+    .genres-box li {
+      transition: transform 0.3s ease, color 0.3s ease;
+      cursor: default;
+    }
+
+    .genres-box li:hover {
+      transform: translateX(10px);
+      color: var(--gold);
+    }
+
+    .small-boxes-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .small-box {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .small-box:hover {
+        border-color: var(--gold-soft);
+        background: rgba(212, 160, 23, 0.03);
+    }
+
+    .small-box h4 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 60px 0 40px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #666;
+    }
+
+    footer span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    @media (max-width: 850px) {
+      .row { grid-template-columns: 1fr !important; }
+      .genres-container { flex-direction: column; align-items: stretch; }
+      .back-box, .next-box { bottom: 15px; padding: 10px 18px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="index.html" class="back-box">
+    <span>←</span> Home Page
+  </a>
+
+  <a href="hobby writing page1.html" class="next-box">
+    More About Literatures <span>→</span>
+  </a>
+
+  <header>
+    <h1>Writing</h1>
+    <p>A quiet sanctuary where thoughts unfold and stories take form.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px;">
+      <div class="section">
+        <h2>Why Writing?</h2>
+        <p style="font-weight: 300; font-size: 1.05rem;">
+          While the reality is painfully brutal, and 'Home' is the place where one feels most like an exiled. 
+          Writing grants the privilege to seek security. In the silence, writing allows the <span style="color: var(--gold); font-style: italic;">displaced soul</span>, 
+          to express their thoughts freely, to find reassurance that their emotions are valid and acceptable. 
+        </p>
+      </div>
+
+      <div class="section" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.95)), url('ECC4AA7F-2915-4B3B-A0FB-CE0B9A208ACE.jpeg') center/cover no-repeat; background-blend-mode: darken;">
+        <h2>My Inspiration</h2>
+        <a href="https://www.harrypotter.com/" class="box-link">
+            <div class="highlight-box">The Magical Universe of Harry Potter</div>
+        </a>
+
+        <h2 style="margin-top: 35px;">My Guiding Quills</h2>
+        <a href="https://share.google/Ggdwq1NjLRRtmrjQM" class="box-link">
+            <div class="highlight-box">J.K. Rowling</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="genres-container">
+        <div class="genres-box">
+            <h2 style="color: var(--gold); border-left: 4px solid var(--gold); padding-left: 14px; font-family: 'Playfair Display', serif;">Preferred Genres</h2>
+            <ul style="list-style: none; padding-left: 0; margin: 0; display: grid; gap: 14px;">
+                <li style="background: rgba(212,160,23,0.05); padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(212,160,23,0.2); font-weight: 500; letter-spacing: 0.4px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--gold);">◈</span> Fantasy
+                </li>
+                <li style="background: rgba(212,160,23,0.05); padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(212,160,23,0.2); font-weight: 500; letter-spacing: 0.4px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--gold);">◈</span> Romance
+                </li>
+                <li style="background: rgba(212,160,23,0.05); padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(212,160,23,0.2); font-weight: 500; letter-spacing: 0.4px; display: flex; align-items: center; gap: 10px;">
+                    <span style="color: var(--gold);">◈</span> Detective &amp; Mystery
+                </li>
+            </ul>
+        </div>
+
+        <div class="small-boxes-column">
+            <div class="small-box">
+                <h4 style="color: var(--gold); margin: 0 0 10px 0;">Writings I Do</h4>
+                <p style="margin: 0; opacity: 0.8; font-style: italic;">Novel, Fanfictions, Poems, Pictorial</p>
+            </div>
+            <div class="small-box">
+                <h4 style="color: var(--gold); margin: 0 0 10px 0;">Languages</h4>
+                <p style="margin: 0; opacity: 0.8; font-weight: 600;">Thai & English</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px;">
+      <div class="section">
+        <h2>Check Out My Work</h2>
+        <p>Read A Write: <span style="color: var(--gold);">DuckEnthusiast</span></p>
+        <p>AO3: <span style="color: var(--gold);">DuckEnthusiast</span></p>
+      </div>
+
+      <div class="section" style="border-left: 4px solid var(--gold);">
+        <h2>My Short-Term Goal</h2>
+        <p>To <span style="border-bottom: 1px solid var(--gold);">refine and elevate</span> my writing in both languages I use.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    Created with intention by <span>DuckEnthusiast</span>
+  </footer>
+
+</body>
+</html>

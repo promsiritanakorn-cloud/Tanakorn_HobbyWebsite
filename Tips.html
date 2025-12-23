@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Tips | Universe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #08080a;
+  --panel: rgba(25, 25, 30, 0.7);
+  --text: #e6e6e6;
+  --gold: #d4a017;
+  --border: rgba(212, 160, 23, 0.2);
+  --yt-red: #ff4d4d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 50% 0%, rgba(212, 160, 23, 0.08) 0%, transparent 50%);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  color: var(--gold);
+}
+
+/* BIG TOP BOX */
+.big-tip-box {
+  background: linear-gradient(135deg, var(--panel), rgba(40, 35, 20, 0.4));
+  border: 1px solid var(--gold);
+  border-radius: 40px;
+  padding: 60px;
+  margin-bottom: 60px;
+  backdrop-filter: blur(15px);
+}
+
+.big-tip-box h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* SECTION LABELS */
+.section-label {
+  font-family: "Playfair Display", serif;
+  color: var(--gold);
+  font-size: 1.8rem;
+  margin: 40px 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.section-label::after {
+  content: "";
+  height: 1px;
+  flex-grow: 1;
+  background: linear-gradient(to right, var(--gold), transparent);
+}
+
+/* GRIDS */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* BOX STYLING */
+.small-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 30px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.small-box:hover {
+  transform: translateY(-8px);
+  background: rgba(35, 30, 20, 0.8);
+}
+
+.small-box h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.small-box p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* VIDEO BOX UNIQUE STYLE */
+.video-box {
+  border: 1px solid rgba(255, 77, 77, 0.2);
+}
+
+.video-box:hover {
+  border-color: var(--yt-red);
+  box-shadow: 0 10px 30px rgba(255, 77, 77, 0.1);
+}
+
+.video-box h3 {
+  color: var(--yt-red);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* CTA START WRITING BUTTON */
+.cta-button {
+  display: inline-block;
+  background: var(--gold);
+  color: #000;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  padding: 25px 60px;
+  border-radius: 50px;
+  margin: 80px 0 30px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(212, 160, 23, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 50px rgba(212, 160, 23, 0.6);
+  background: #fff;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 12px 30px;
+  border-radius: 100px;
+  transition: 0.3s;
+  opacity: 0.6;
+}
+
+.back-btn:hover {
+  border-color: var(--gold);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  header h1 { font-size: 2.5rem; }
+  .big-tip-box { padding: 30px; }
+  .cta-button { font-size: 1.4rem; padding: 20px 40px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <header>
+    <h1>Tips & Techniques</h1>
+  </header>
+
+  <div class="big-tip-box">
+    <h2>Show, Don't Tell</h2>
+    <p>Instead of telling the reader that a character is angry, show the white-knuckle grip they have on their wand, the sudden drop in room temperature, or the way their breath hitches.</p>
+  </div>
+
+  <h2 class="section-label">Writing Fundamentals</h2>
+  <div class="tips-grid">
+    <div class="small-box">
+      <h3>Kill Your Darlings</h3>
+      <p>Even if a sentence is beautiful, if it doesn't move the story forward, have the courage to cut it.</p>
+    </div>
+    <div class="small-box">
+      <h3>Read Aloud</h3>
+      <p>Read your dialogue out loud. If it feels awkward to say, it will feel awkward to read.</p>
+    </div>
+    <div class="small-box">
+      <h3>Active Voice</h3>
+      <p>Use active verbs to keep the pace moving. "The dragon roared" beats "A roar was made."</p>
+    </div>
+    <div class="small-box">
+      <h3>Write Daily</h3>
+      <p>Writing is a muscle. Even 200 words a day keeps the creative juices flowing.</p>
+    </div>
+    <div class="small-box">
+      <h3>The First Draft</h3>
+      <p>Don't worry about being perfect; worry about finishing the journey.</p>
+    </div>
+  </div>
+
+  <h2 class="section-label" style="color: var(--yt-red);">Video Resources</h2>
+  <div class="tips-grid">
+    <a href="http://www.youtube.com/watch?v=yHKKtxliYaY" class="small-box video-box" target="_blank">
+      <h3>▶ Character Depth</h3>
+      <p>Techniques for building complex protagonists and believable villains.</p>
+    </a>
+
+    <a href="http://www.youtube.com/watch?v=pRBhZpdnAa8" class="small-box video-box" target="_blank">
+      <h3>▶ World Building</h3>
+      <p>A deep dive into creating immersive magical systems and geography.</p>
+    </a>
+
+    <a href="http://www.youtube.com/watch?v=UigjnxgyOSQ" class="small-box video-box" target="_blank">
+      <h3>▶ Plot Structures</h3>
+      <p>Understanding the hero's journey and alternative storytelling arcs.</p>
+    </a>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="https://share.google/B1u7y2MQPE0MCoN4K" class="cta-button">Start Writing Now</a>
+    <br>
+    <a href="hobby writing page1.html" class="back-btn">← Return to More About Literatures</a>
+  </div>
+
+</div>
+
+</body>
+</html>

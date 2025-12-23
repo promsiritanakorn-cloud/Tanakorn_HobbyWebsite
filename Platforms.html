@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publishing Platforms | Universe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #08080a;
+  --panel: rgba(25, 25, 30, 0.7);
+  --text: #e6e6e6;
+  --gold: #d4a017;
+  --gold-glow: rgba(212, 160, 23, 0.2);
+  --border: rgba(212, 160, 23, 0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  background-image: radial-gradient(circle at 0% 0%, rgba(212, 160, 23, 0.05) 0%, transparent 50%);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header p {
+  opacity: 0.6;
+  font-size: 1rem;
+}
+
+/* FEATURED PLATFORM (BIG BOX) */
+.featured-platform {
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.1), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1600') center/cover;
+  background-blend-mode: overlay;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  padding: 50px;
+  margin-bottom: 50px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.featured-platform:hover {
+  transform: scale(1.01);
+}
+
+.featured-platform h2 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold);
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--gold);
+  color: black;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* PLATFORM GRID */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.platform-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 35px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.platform-box:hover {
+  border-color: var(--gold);
+  transform: translateY(-10px);
+  background: rgba(40, 35, 25, 0.8);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.platform-box h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.platform-box p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  flex-grow: 1;
+}
+
+.tag {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+
+.back-link:hover {
+  letter-spacing: 3px;
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 2rem; }
+  .featured-platform { padding: 30px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <header>
+    <h1>Platforms</h1>
+    <p>Platforms you could publish your works on.</p>
+  </header>
+
+  <a href="https://archiveofourown.org " class="featured-platform" target="_blank">
+    <span class="badge">Primary Choice</span>
+    <h2>AO3</h2>
+    <p style="max-width: 600px;">The most popular platform for both Thai and foreign writers. The gold standard FanFiction. Excellent community feedback, easy-to-use interface, and great monetization options for creators.</p>
+  </a>
+
+  <div class="platform-grid">
+    
+    <a href="https://www.readawrite.com" class="platform-box" target="_blank">
+      <h3>ReadAWrite</h3>
+      <p>Very popular amoung Thai Writers & Readers. Easy to use, and has many features.</p>
+      <span class="tag">#Global #Fanfic #Archive</span>
+    </a>
+
+    <a href="https://www.wattpad.com" class="platform-box" target="_blank">
+      <h3>Wattpad</h3>
+      <p>Great for original stories and reaching a massive younger audience. Perfect for Romance and YA genres.</p>
+      <span class="tag">#Global #Originals #Community</span>
+    </a>
+
+    <a href="https://www.dek-d.com" class="platform-box" target="_blank">
+      <h3>Dek-D</h3>
+      <p>The legendary Thai platform for teenagers and student writers. Strong roots in light novels and fantasy.</p>
+      <span class="tag">#Thai #Classic #TeenCulture</span>
+    </a>
+
+    <a href="https://www.medium.com" class="platform-box" target="_blank">
+      <h3>Medium</h3>
+      <p>If you write essays, non-fiction, or poetic prose, this is the cleanest place to share your thoughts.</p>
+      <span class="tag">#Articles #NonFiction #Clean</span>
+    </a>
+
+  </div>
+
+  <a href="hobby writing page1.html" class="back-link">← Return to More About Literature</a>
+</div>
+
+</body>
+</html>

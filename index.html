@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing Universe - Home</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0a0a0d;
+  --text:#e6e6e6;
+  --gold:#d4a017;
+  --shadow:0 40px 120px rgba(0,0,0,0.85);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at top,#1a1a1f,#0a0a0d);
+  color:var(--text);
+}
+
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&auto=format&fit=crop&w=1600') center/cover no-repeat;
+  position:relative;
+}
+
+header::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.95));
+}
+
+header h1{
+  position:relative;
+  font-family:'Playfair Display',serif;
+  font-size:6rem;
+  color:var(--gold);
+  z-index:1;
+}
+
+.intro-text{
+  position:relative;
+  margin-top:20px;
+  font-size:1.5rem;
+  max-width:900px;
+  z-index:1;
+}
+
+
+.scroll-box{
+  margin:-250px auto 40px; 
+  width:fit-content;
+  padding:14px 26px;
+  border-radius:18px;
+  background:rgba(20,20,24,.85);
+  color:var(--gold);
+  font-weight:600;
+  letter-spacing:.5px;
+  box-shadow:var(--shadow);
+  animation:float 2.5s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(8px);}
+}
+
+.section-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:40px;
+  max-width:1400px;
+  margin:80px auto;
+  padding:0 20px;
+  margin-top:350px; /* ← add this */
+  grid-template-areas:
+    "box1 box3"
+    "box2 box3";
+}
+
+
+#box1{grid-area:box1;}
+#box2{grid-area:box2;}
+#box3{grid-area:box3;}
+
+.card-link{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+
+.feature-card{
+  background:linear-gradient(135deg,rgba(20,20,24,.95),rgba(30,30,35,.95));
+  border-radius:25px;
+  box-shadow:var(--shadow);
+  transition:transform .6s ease;
+}
+
+.feature-card:hover{transform:scale(1.04);}
+
+.feature-info{
+  padding:30px;
+  text-align:center;
+}
+
+.feature-info h2{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.feature-info p{
+  margin-bottom:20px;
+  font-size:1.1rem;
+}
+
+.image-box{
+  width:100%;
+  height:350px;
+  border-radius:18px;
+  overflow:hidden;
+  background:#1a1a1f;
+}
+
+.image-box.tall{height:460px;}
+
+.image-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.nav-links{
+  display:flex;
+  justify-content:space-between;
+  max-width:1400px;
+  margin:60px auto;
+  padding:0 40px;
+}
+
+.nav-links a{
+  color:var(--gold);
+  text-decoration:none;
+  font-weight:600;
+}
+
+footer{
+  text-align:center;
+  padding:60px 0;
+  color:#a5a5a5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>To Write is To Voice<br>Thoughts Through Quills</h1>
+  <p class="intro-text">Words are, in my not-so-humble opinion, our most<br>inexhaustible source of magic.<br> - Albus Percival Wulfric Brian Dumbledore</p>
+</header>
+
+<!-- SCROLL PROMPT -->
+<div class="scroll-box">Don't love your job. Job your love.</div>
+
+<div class="section-grid">
+
+<a href="hobby writing.html" class="card-link" id="box1">
+  <div class="feature-card">
+    <div class="feature-info">
+      <h2>Writing as my interest</h2>
+      <p>The art of literature from my view and personal experiences.</p>
+      <div class="image-box">
+        <img src="pics/writing pic.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="hobby writing page4 money.html" class="card-link" id="box2">
+  <div class="feature-card">
+    <div class="feature-info">
+      <h2>Make money from writings</h2>
+      <p>Interested in monetizing your hobby? Learn More!</p>
+      <div class="image-box">
+        <img src="pics/money.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</a>
+
+<a href="hobby writing page1.html" class="card-link" id="box3">
+  <div class="feature-card">
+    <div class="feature-info">
+      <h2>More about literatures and writings</h2>
+      <p>Find out more deatails & tips here!</p>
+      <div class="image-box tall">
+        <img src="pics/books.jpg" alt="d">
+      </div>
+    </div>
+  </div>
+</a>
+
+</div>
+
+<div class="nav-links">
+  <a href="hobby writing page1.html">Explore More→</a>
+</div>
+
+<footer>
+  Created with intention by <span style="color:#d4a017;">DuckEnthusiast</span>
+</footer>
+
+</body>
+</html>
